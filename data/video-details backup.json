@@ -292,17 +292,5 @@
                 "timestamp": 1701584262000
             }
         ]
-    },
-    {
-        "id": "9223c384-fc93-45e1-9caf-327fabe02f36",
-        "title": "A Race Against Time",
-        "channel": "New User",
-        "image": "http://localhost:5555/images/imageUpload.jpg",
-        "description": "Go fast",
-        "views": 0,
-        "likes": 0,
-        "video": "https://unit-3-project-api-0a5620414506.herokuapp.com/stream",
-        "timestamp": 1715975549287,
-        "comments": []
     }
 ]
