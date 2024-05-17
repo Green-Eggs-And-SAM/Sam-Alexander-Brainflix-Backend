@@ -2,11 +2,9 @@ const express = require('express');
 const router = express.Router();
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
-const videosData = require('../data/video-details.json');
 const videosFilePath = 'data/video-details.json';
 
 router.get('/videos', (req, res) => {
-    // console.log('videosData', videosData);
     const video = fs.readFileSync(videosFilePath);
     res.send(JSON.parse(video));
 });
@@ -19,7 +17,6 @@ router.get('/videos/:id', (req, res) => {
 });
 
 router.post('/upload', (req, res) => {
-    console.log(res);
     const { title, description, image } = req.body;
     const newVideo = {
         id: uuidv4(),
@@ -35,8 +32,6 @@ router.post('/upload', (req, res) => {
     };
     const videos = JSON.parse(fs.readFileSync(videosFilePath));
     videos.push(newVideo);
-    console.log(videos);
-    console.log('posted video', newVideo);
     fs.writeFile(videosFilePath, JSON.stringify(videos), (err) => {
         if (err) {
             console.error('Error writing to file:', err);
